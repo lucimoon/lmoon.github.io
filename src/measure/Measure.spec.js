@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import Measure from "./Measure";
+import strumSymbols from "../constants/strumSymbols";
 
 describe("Measure", () => {
   it("renders 4 beats", () => {
@@ -13,9 +14,9 @@ describe("Measure", () => {
     render(<Measure beats={["up", "down", "rest", "mute"]} />);
     const beats = screen.getAllByTestId(/^beat/);
 
-    expect(beats[0]).toHaveTextContent("⬆️");
-    expect(beats[1]).toHaveTextContent("⬇️");
-    expect(beats[2]).toHaveTextContent("-");
-    expect(beats[3]).toHaveTextContent("X");
+    expect(beats[0]).toHaveTextContent(strumSymbols.up);
+    expect(beats[1]).toHaveTextContent(strumSymbols.down);
+    expect(beats[2]).toHaveTextContent(strumSymbols.rest);
+    expect(beats[3]).toHaveTextContent(strumSymbols.mute);
   });
 });

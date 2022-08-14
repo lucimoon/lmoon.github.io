@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import Phrase from "./Phrase";
+import strumSymbols from "../constants/strumSymbols";
 
 const measures = [
   ["up", "down", "rest", "mute"],
@@ -20,20 +21,20 @@ test("renders configured beats", () => {
 
   const beats = screen.getAllByTestId(/^beat/);
 
-  expect(beats[0]).toHaveTextContent("⬆️");
-  expect(beats[1]).toHaveTextContent("⬇️");
-  expect(beats[2]).toHaveTextContent("-");
-  expect(beats[3]).toHaveTextContent("X");
-  expect(beats[4]).toHaveTextContent("⬇️");
-  expect(beats[5]).toHaveTextContent("-");
-  expect(beats[6]).toHaveTextContent("X");
-  expect(beats[7]).toHaveTextContent("⬆️");
-  expect(beats[8]).toHaveTextContent("-");
-  expect(beats[9]).toHaveTextContent("X");
-  expect(beats[10]).toHaveTextContent("⬆️");
-  expect(beats[11]).toHaveTextContent("⬇️");
-  expect(beats[12]).toHaveTextContent("X");
-  expect(beats[13]).toHaveTextContent("⬆️");
-  expect(beats[14]).toHaveTextContent("⬇️");
-  expect(beats[15]).toHaveTextContent("-");
+  expect(beats[0]).toHaveTextContent(strumSymbols.up);
+  expect(beats[1]).toHaveTextContent(strumSymbols.down);
+  expect(beats[2]).toHaveTextContent(strumSymbols.rest);
+  expect(beats[3]).toHaveTextContent(strumSymbols.mute);
+  expect(beats[4]).toHaveTextContent(strumSymbols.down);
+  expect(beats[5]).toHaveTextContent(strumSymbols.rest);
+  expect(beats[6]).toHaveTextContent(strumSymbols.mute);
+  expect(beats[7]).toHaveTextContent(strumSymbols.up);
+  expect(beats[8]).toHaveTextContent(strumSymbols.rest);
+  expect(beats[9]).toHaveTextContent(strumSymbols.mute);
+  expect(beats[10]).toHaveTextContent(strumSymbols.up);
+  expect(beats[11]).toHaveTextContent(strumSymbols.down);
+  expect(beats[12]).toHaveTextContent(strumSymbols.mute);
+  expect(beats[13]).toHaveTextContent(strumSymbols.up);
+  expect(beats[14]).toHaveTextContent(strumSymbols.down);
+  expect(beats[15]).toHaveTextContent(strumSymbols.rest);
 });

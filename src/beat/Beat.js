@@ -1,26 +1,9 @@
+import strumSymbols from "../constants/strumSymbols";
+
 const Beat = function ({ type }) {
-  let content = "";
-  switch (type) {
-    case "up":
-      content = "⬆️";
-      break;
-
-    case "down":
-      content = "⬇️";
-      break;
-    case "mute":
-      content = "X";
-      break;
-    case "rest":
-      content = "-";
-      break;
-    default:
-      break;
-  }
-
   return (
     <div data-testid={`beat-${type}`} className="beat">
-      {content}
+      {strumSymbols[type]}
     </div>
   );
 };
