@@ -20,7 +20,7 @@ const StrumSymbols: Record<StrumSymbolId, StrumSymbolData> = {
   },
   [StrumSymbolId.REST]: {
     name: StrumSymbolId.REST,
-    symbol: "",
+    symbol: "-",
   },
 };
 

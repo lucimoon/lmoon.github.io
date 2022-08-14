@@ -11,4 +11,6 @@ declare global {
     name: string;
     symbol: string;
   };
+
+  type Count = number | "e" | "&" | "a";
 }
