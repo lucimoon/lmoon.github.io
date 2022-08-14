@@ -1,13 +1,13 @@
 import React from "react";
 import Measure from "../measure/Measure";
 
-const Phrase = () => {
+const Phrase = ({ measures }) => {
   return (
     <div>
-      <Measure beats={["up", "down", "rest", "mute"]} />
-      <Measure beats={["up", "down", "rest", "mute"]} />
-      <Measure beats={["up", "down", "rest", "mute"]} />
-      <Measure beats={["up", "down", "rest", "mute"]} />
+      <Measure beats={measures[0]} />
+      <Measure beats={measures[1]} />
+      <Measure beats={measures[2]} />
+      <Measure beats={measures[3]} />
     </div>
   );
 };

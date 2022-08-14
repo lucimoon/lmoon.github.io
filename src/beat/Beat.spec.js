@@ -5,7 +5,7 @@ describe("Beat", () => {
   it("renders a beat", () => {
     render(<Beat type="up" />);
 
-    const anyBeat = screen.getByTestId("beat");
+    const anyBeat = screen.getByTestId(/^beat/);
     expect(anyBeat).toBeInTheDocument();
   });
 

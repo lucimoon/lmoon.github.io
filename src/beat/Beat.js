@@ -19,7 +19,7 @@ const Beat = function ({ type }) {
   }
 
   return (
-    <div data-testid="beat" className="beat">
+    <div data-testid={`beat-${type}`} className="beat">
       {content}
     </div>
   );

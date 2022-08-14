@@ -1,12 +1,8 @@
 import "./App.css";
 import Phrase from "./phrase/Phrase";
+import generatePhrase from "./generate-phrase/generatePhrase";
 
-const measures = [
-  ["up", "down", "rest", "mute"],
-  ["up", "down", "rest", "mute"],
-  ["up", "down", "rest", "mute"],
-  ["up", "down", "rest", "mute"],
-];
+const measures = generatePhrase();
 
 function App() {
   return (
