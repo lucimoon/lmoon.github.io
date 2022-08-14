@@ -10,16 +10,39 @@ const getRandomBeatIndex = () => {
   return Math.floor(Math.random() * 4);
 };
 
-const getRandomBeat = () => {
-  return validBeats[getRandomBeatIndex()];
+export const getRandomBeat = (previousBeat?: StrumSymbolId) => {
+  let validBeatSubset = [...validBeats];
+
+  if (previousBeat === StrumSymbolId.UP) {
+    validBeatSubset = [
+      StrumSymbolId.DOWN,
+      StrumSymbolId.REST,
+      StrumSymbolId.MUTE,
+    ];
+  }
+
+  if (previousBeat === StrumSymbolId.DOWN) {
+    validBeatSubset = [
+      StrumSymbolId.UP,
+      StrumSymbolId.REST,
+      StrumSymbolId.MUTE,
+    ];
+  }
+
+  return validBeatSubset[getRandomBeatIndex()];
 };
 
 const generatePhrase = (): PhraseData => {
   return [
-    [getRandomBeat(), getRandomBeat(), getRandomBeat(), getRandomBeat()],
-    [getRandomBeat(), getRandomBeat(), getRandomBeat(), getRandomBeat()],
-    [getRandomBeat(), getRandomBeat(), getRandomBeat(), getRandomBeat()],
-    [getRandomBeat(), getRandomBeat(), getRandomBeat(), getRandomBeat()],
+    [
+      StrumSymbolId.DOWN,
+      StrumSymbolId.REST,
+      getRandomBeat(),
+      StrumSymbolId.REST,
+    ],
+    [getRandomBeat(), StrumSymbolId.REST, getRandomBeat(), StrumSymbolId.REST],
+    [getRandomBeat(), StrumSymbolId.REST, getRandomBeat(), StrumSymbolId.REST],
+    [getRandomBeat(), StrumSymbolId.REST, getRandomBeat(), StrumSymbolId.REST],
   ];
 };
 
