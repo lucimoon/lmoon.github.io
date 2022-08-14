@@ -3,7 +3,7 @@ import Beat from "../beat/Beat";
 
 const Measure = ({ beats }) => {
   return (
-    <div>
+    <div className="measure">
       <Beat type={beats[0]} />
       <Beat type={beats[1]} />
       <Beat type={beats[2]} />
