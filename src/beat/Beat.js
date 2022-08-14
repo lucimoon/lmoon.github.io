@@ -1,8 +1,28 @@
 const Beat = function ({ type }) {
-  if (type === "up") return <div>⬆️</div>;
-  if (type === "down") return <div>⬇️</div>;
-  if (type === "mute") return <div>X</div>;
-  if (type === "rest") return <div>-</div>;
+  let content = "";
+  switch (type) {
+    case "up":
+      content = "⬆️";
+      break;
+
+    case "down":
+      content = "⬇️";
+      break;
+    case "mute":
+      content = "X";
+      break;
+    case "rest":
+      content = "-";
+      break;
+    default:
+      break;
+  }
+
+  return (
+    <div data-testid="beat" className="beat">
+      {content}
+    </div>
+  );
 };
 
 export default Beat;
