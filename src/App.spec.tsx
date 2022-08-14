@@ -11,10 +11,10 @@ describe("App", () => {
 
   it("renders valid beats", () => {
     render(<App />);
-    const ups = screen.getAllByTestId("beat-up");
-    const downs = screen.getAllByTestId("beat-down");
-    const mutes = screen.getAllByTestId("beat-mute");
-    const rests = screen.getAllByTestId("beat-rest");
+    const ups = screen.getAllByTestId("beat-UP");
+    const downs = screen.getAllByTestId("beat-DOWN");
+    const mutes = screen.getAllByTestId("beat-MUTE");
+    const rests = screen.getAllByTestId("beat-REST");
 
     expect(ups.length + downs.length + mutes.length + rests.length).toEqual(16);
   });

@@ -1,7 +1,11 @@
 import React from "react";
 import Beat from "../beat/Beat";
+import { StrumSymbolId } from "../constants/StrumSymbols";
 
-const Measure = ({ beats }) => {
+type Props = {
+  beats: StrumSymbolId[];
+};
+const Measure = ({ beats }: Props) => {
   return (
     <div className="measure">
       <Beat type={beats[0]} />

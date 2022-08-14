@@ -1,7 +1,11 @@
 import React from "react";
 import Measure from "../measure/Measure";
 
-const Phrase = ({ measures }) => {
+type Props = {
+  measures: MeasureData[];
+};
+
+const Phrase = ({ measures }: Props) => {
   return (
     <div className="phrase">
       <Measure beats={measures[0]} />
